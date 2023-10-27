@@ -103,23 +103,21 @@ class MainActivity : AppCompatActivity() {
                     x = index
                     x *= 4
                     if (fl > 0.5) {
-                        paint.setColor(colors.get(index))
+                        paint.color = colors[index]
                         paint.style = Paint.Style.STROKE
                         canvas.drawRect(
                             RectF(
-                                locations.get(x + 1) * w,
-                                locations.get(x) * h,
-                                locations.get(x + 3) * w,
-                                locations.get(x + 2) * h
+                                locations[x + 1] * w,
+                                locations[x] * h,
+                                locations[x + 3] * w,
+                                locations[x + 2] * h
                             ), paint
                         )
                         paint.style = Paint.Style.FILL
                         canvas.drawText(
-                            labels.get(
-                                classes.get(index).toInt()
-                            ) + " " + fl.toString(),
-                            locations.get(x + 1) * w,
-                            locations.get(x) * h,
+                            labels[classes[index].toInt()] + " " + fl.toString(),
+                            locations[x + 1] * w,
+                            locations[x] * h,
                             paint
                         )
                     }
